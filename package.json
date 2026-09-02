@@ -4,12 +4,12 @@
   "private": true,
   "description": "Voxa - Production-quality Random Live Video Chat Application",
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "npm --prefix server run dev",
-    "dev:client": "npm --prefix client run dev",
-    "build": "npm --prefix server install && npm --prefix server run build && npm --prefix client install && npm --prefix client run build",
+    "dev": "node init && concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node init && npm --prefix server run dev",
+    "dev:client": "node init && npm --prefix client run dev",
+    "build": "node init && npm --prefix server install && npm --prefix server run build && npm --prefix client install && npm --prefix client run build",
     "vercel-build": "npm --prefix client install && npm --prefix client run build",
-    "start": "npm --prefix server run start",
+    "start": "node init && npm --prefix server run start",
     "install:all": "npm install && npm --prefix server install && npm --prefix client install"
   },
   "devDependencies": {
